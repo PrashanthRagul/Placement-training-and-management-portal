@@ -1,0 +1,44 @@
+
+<%- include ("./partials/header") %>
+<head>
+   
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<br>
+<br>
+<br>
+
+<div class="container"> 
+    <div class="panel panel-info" >
+        <div class="panel-heading">
+          <B> <div class="panel-title">ADMIN LOGIN</div></B>
+            </div>
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+<form action="/loginadmin" method="POST" id="loginform" class="form-horizontal" role="form"> 
+    <div style="margin-bottom: 25px" class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+   <input type="text" id="login-username"  class="form-control"name="username"
+        placeholder="username"> <br>
+        </div>
+        <div style="margin-bottom: 25px" class="input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+  <input type="password" name="password" id="login-password"  class="form-control"
+        placeholder="password"> <br>
+        </div>
+        <div style="margin-top:10px" class="form-group">
+            <!-- Button -->
+
+            <div class="col-sm-12 controls">
+    <button id="btn-login"  class="btn btn-success">login</button> 
+    </div>
+    </div>
+    
+</form> 
+</div>
+</div>
+<%- include ("./partials/footer") %>
+  

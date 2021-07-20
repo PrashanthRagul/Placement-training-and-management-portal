@@ -1,0 +1,32 @@
+
+<%- include ("./partials/header") %>
+
+<form action="/tut_questions" method="POST"> 
+    <center><h1>Subjects</h1>
+      <%
+      var result = [];
+
+      departments.forEach(function (department) {
+          if (result.indexOf(department.subname) === -1) {
+              result.push(department.subname); %>
+           
+            <%
+          }     
+      }); 
+     
+      %>
+    
+  <% 
+    result.forEach(function(department){
+     
+      %>
+
+          <p><center><button id="btn-login"  class="btn btn-success" name="dept" value="<%=department%>"><%=department%></button></center></p>
+          
+  <% }); %>
+</center>
+         
+  <br>
+  <br>
+  <br>
+</form>

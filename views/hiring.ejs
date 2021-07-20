@@ -1,0 +1,85 @@
+
+
+<%- include ("./partials/header") %>
+<html>
+<head>
+  
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<script>
+  
+</script>
+</head>
+<div class="container"> 
+    <div class="panel panel-info" >
+        <div class="panel-heading">
+            <div class="panel-title">Hiring request</div>
+            </div>
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+<form action="/hiring/<%=name1%>"   method="POST">
+    companyname
+    <input type="text"  name="namecom" value="<%=name1%>"  id="comname"class="form-control" readonly>
+    <br>   
+last date of registration
+<input type="date" name="regdate" id="regdate"class="form-control" >
+<br>
+
+eligible branch:UG:<br>
+<input type="checkbox" id="dept1" name="dept1" value="CS">CS<br>
+<input type="checkbox" id="dept2" name="dept2" value="EC">EC<br>
+<input type="checkbox" id="dept3" name="dept3" value="EE">EE<br>
+<input type="checkbox" id="dept4" name="dept4" value="IT">IT<br>
+
+PG:<br>
+<input type="checkbox" id="dept5" name="dept5" value="CS">CS<br>
+<input type="checkbox" id="dept6" name="dept6" value="IT">IT<br>
+
+eligibilty criteria:<br>
+<input type="number" id="cgpa"class="form-control" name="cgpa" min="7" max="10" step="any"><br>
+<input type="checkbox"  name="internalso" >eligible for internship also<br>
+
+CTC:(in LPA)<br>
+<input type="number" id="CTC"class="form-control" name="CTC"><br>
+
+stipend:
+<input type="number" id="stipend"class="form-control" name="stipend"><br>
+JOB role:<br>
+<input type="text" class="form-control"name="role"><br>
+
+online test Date:(placement)<br>
+<input type="date" id="testdate"class="form-control" name="testdate"><br>
+online test Date:(intern)<br>
+<input type="date" id="testdateintern"class="form-control" name="testdateintern"><br>
+placement online apply link:
+Link <input type="url"  name="link" class="form-control" ><br>
+internship online apply link:
+Link <input type="url" class="form-control" name="linkintern" ><br>
+
+intern period:<br>
+<input type="number" id="months" class="form-control"name="months"><br>
+intern start date:
+<input type="date" id="startdate"class="form-control" name="startdate"><br>
+intern last date
+<input type="date" id="lastdate"class="form-control" name="lastdate">
+<br>
+
+
+<input type="checkbox"  name="internppo" >PPO offered based on performance in  internship <br>
+description:
+<br>
+
+<textarea id="w3review" class="form-control"name="w3review" rows="4" cols="50">
+
+
+</textarea>
+<center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+
+</form>
+</div>
+</div>
+</div>
+
+</html>
+<%- include ("./partials/footer") %>

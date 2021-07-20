@@ -1,0 +1,58 @@
+
+
+        
+       
+       <%- include ("./partials/header") %>
+       <html>
+           <head>
+           <title>webinar</title>
+           <head>
+             
+        
+        
+     
+       <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+         <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+       
+       
+       </head><body>
+         <br>
+         <br>
+         <br>
+         <div class="container"> 
+           <div class="panel panel-info" >
+               <div class="panel-heading">
+                   <div class="panel-title">webinar</div>
+                   </div>
+                   <div style="padding-top:30px" class="panel-body" >
+       
+                       <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div> 
+      
+       <form action="/main/applyredirect/<%=currentUser.username%>" name="register_com" method="POST"> 
+           <input type="hidden" value="<%=id%>" name="id">
+           <input type="hidden" value="<%=type%>" name="type">
+           <input type="hidden" value="<%=name%>" name="name">
+
+           <b>Roll no:</b><br><input type="number" name="username"  class="form-control"id="suser" value="<%=student.username%>"   required><br>
+          
+           <b> NAME:</b><br>  <input type="text" class="form-control"name="studentname"id="stuname"  value="<%=student.name%>" required><br>
+            
+             <b> E-MAIL ID:</b><br>  <input type="email" class="form-control"name="email"id="email"  value="<%=student.email%>" required><br>
+            
+             <b> MOBILE NUMBER:</b><br>  <input type="tel" class="form-control"name="mobile" id="mob-num" value="<%=student.mobile%>"  pattern="\d{12}$" title="phone no conatins 12 digits with country code 91" required></br>
+                    
+             <b>GENDER:</b><br>
+            <input type="text" id="male" name="gender" value="<%=student.gender%>"  required>
+       <br>
+       <b>DEPARTMENT:</b><br> <input type="text" name="department" class="form-control" value="<%=student.department%>" required></br>
+       
+       <b>YEAR :</b><br><input type="number" name="yearofpass"class="form-control" value="<%=student.currentyear%>" required></br>  
+         <div class="col-sm-12 controls">
+          <center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+           </div>
+          
+       </form> 
+         
+       </body>
+       </html>
+       <%- include ("./partials/footer") %>

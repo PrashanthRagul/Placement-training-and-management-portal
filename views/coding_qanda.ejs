@@ -1,0 +1,47 @@
+
+<%- include ("./partials/header") %>
+
+<form action="" method="POST"> 
+  
+    
+    <%var f=false;%>
+            <% for(var i= 0 ; i < questions.length; i++) {%>
+                
+              
+               
+                
+                  <%  for(var j=0 ; j < questions[i].qanda.length; j++){
+                    if(questions[i].qanda[j].short_ques==topic&&f==false){
+                   f=true;
+                        %>
+                                           
+                     
+                       <p><center><h2><%=questions[i].qanda[j].short_ques %></center></h2></p>
+                 
+            <center><h3>Question:</h3></center>  <br>    
+            <center>            
+  <p><textarea readonly cols="130" rows="20" ><%=questions[i].qanda[j].question %></textarea></p>
+</center>    
+<center><h3>Answer:</h3></center>  <br>               
+     <center>                 
+<textarea readonly cols="130" rows="20" style="background-color:#ffe6e6;"><%=questions[i].qanda[j].answer %></textarea>
+</center>                               
+<br>
+                             <br>
+                              <p>  <a href="<%=questions[i].qanda[j].refer %>">Reference</a></p>
+                            
+                            
+                            
+                        <% break} %>     
+                   
+                      
+                    <% } %>
+
+                   
+              
+                    <% } %>   
+               
+  <br>
+  <br>
+  <br>
+</form>

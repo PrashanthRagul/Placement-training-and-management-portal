@@ -1,0 +1,142 @@
+<head>
+  <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+  <df-messenger
+    intent="WELCOME"
+    chat-title="AUBOT"
+    agent-id="f23ee12c-d7ee-4e87-8276-e733aef99afb"
+    language-code="en"
+  ></df-messenger>
+
+<footer class="page-footer font-small unique-color-dark" style="margin-top: 100px;">
+
+<div style="background-color: brown;">
+  <div class="container">
+
+    <!-- Grid row-->
+    <div class="row py-4 d-flex align-items-center">
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
+        <h6 class="mb-0">Get connected with us on social networks!</h6>
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-6 col-lg-7 text-center text-md-right">
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/AnnaUniversityOnline" class="fb-ic">
+          <i class="fab fa-facebook-f white-text mr-4"> </i>
+        </a>
+        <!-- Twitter -->
+        <a href="https://twitter.com/annauniversity" class="tw-ic">
+          <i class="fab fa-twitter white-text mr-4"> </i>
+        </a>
+        <!--Linkedin -->
+        <a href="https://www.linkedin.com/school/anna-university/" class="li-ic">
+          <i class="fab fa-linkedin-in white-text mr-4"> </i>
+        </a>
+        <!--Instagram-->
+        <a href="https://www.instagram.com/anna_university/" class="ins-ic">
+          <i class="fab fa-instagram white-text"> </i>
+        </a>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row-->
+
+  </div>
+</div>
+
+<!-- Footer Links -->
+<div class="container text-center text-md-left mt-5">
+
+  <!-- Grid row -->
+  <div class="row mt-3">
+
+    <!-- Grid column -->
+    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+  <h6 class="text-uppercase font-weight-bold">About US</h6>
+      <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+      <p>The placement and internship platform
+        specific for anna university students.
+        We wish you all for your successful career. 
+        Keep practising!!!
+      </p>
+
+    </div>
+    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+    <h6 class="text-uppercase font-weight-bold">Modules</h6>
+      <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+      <p>
+        <a href="/home">HOME</a>
+      </p>
+      <p>
+        <a href="companies.pdf">List of Companies visited for Campus Recruitment for
+          the year 2019-20</a>
+      </p>
+      <p>
+        <a href="/company">COMPANY</a>
+      </p>
+      <p>
+        <% if(currentUser) { %>
+          <a href="/departments">  TUTORIALS</a>
+          <% } else { %>
+              <a href="/loginstudent"> TUTORIALS</a>
+              <% } %>
+      </p>
+      <p>
+        <% if(currentUser) { %>
+          <a href="/questions">  QNA</a>
+          <% } else { %>
+              <a href="/loginstudent"> QNA</a>
+              <% } %>
+      </p>
+
+    </div>
+    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+    <h6 class="text-uppercase font-weight-bold">Anna university links</h6>
+      <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+      <p>
+        <a href="https://acoe.annauniv.edu/"> ACOE</a>
+      </p>
+      <p>
+        <a href="https://www.aukdc.edu.in/">AUKDC</a>
+      </p>
+      <p>
+        <a href="http://cde.annauniv.edu/Default.aspx">Distant Education</a>
+      </p>
+      
+
+    </div>
+    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+      <h6 class="text-uppercase font-weight-bold">Contact</h6>
+      <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+      <p>
+        <i class="fas fa-home mr-3"></i> Tamil Nadu, Chennai.</p>
+      <p>
+        <i class="fas fa-envelope mr-3"></i> annaunivadmin@gmail.com</p>
+      <p>
+        <i class="fas fa-phone mr-3"></i> +91 86089 98568</p>
+      <p>
+        <i class="fas fa-print mr-3"></i> +91 80562 53900</p>
+
+    </div>
+
+  </div>
+
+</div>
+
+<div class="footer-copyright text-center py-3">© 2020 Copyright:
+  <a href="https:www.annauniv.edu"> Annauniv.edu</a>
+</div>
+</footer>
+</head>
+<body>
+
+
+
+</body>
+</html>

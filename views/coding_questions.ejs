@@ -1,0 +1,27 @@
+
+<%- include ("./partials/header") %>
+
+<form action="/coding_qanda" method="POST"> 
+  
+        
+            <% for(var i= 0 ; i < topic.length; i++) {%>
+                
+                  <p><center><h2><%=topic[i].topic %></h2></center></p>
+               
+                 
+               <%  for(var j=0 ; j < topic[i].qanda.length; j++){%>
+                 
+                  
+                    <p><button id="btn-login"  class="btn btn-success" name="question" value="<%=topic[i].qanda[j].short_ques %>"><%=topic[i].qanda[j].short_ques %></button></p>
+          
+          
+                
+              
+                 <% } %>
+               
+                <% } %>
+                 
+  <br>
+  <br>
+  <br>
+</form>

@@ -1,0 +1,29 @@
+<%- include ("./partials/header") %>
+
+<b><h1>Q/A</h1></b>
+
+  <form action="/questions/<%=user%>" class="form-inline">
+<p>
+  <input type="text" name="search" placeholder="Search question" autocomplete="off" size="46" class="search-bar form-control form-control-sm">
+                                         
+ <input type="submit" value="Search" class="btn btn-primary search-btn btn-sm">
+</p>
+  </form>
+
+<form action="/moreinfo" method="POST"> 
+  <table id="t01" style="width:100%">
+    <p>Welcome!!! <%=user%></p>
+    <%questions.forEach(function(question){%>
+          <tr>
+              <td><p><%=question.question %></p>
+            <p><button id="btn-login"  class="btn btn-success" name="question" value="<%=question.question %>;<%=user%>">More info</button></p>
+            </td>
+            </tr>
+    <% }); %>
+</table>
+<center><a href="/add_qanda">
+  Click here to add your question....
+</a>
+</center>
+</form>
+<%- include ("./partials/footer") %>

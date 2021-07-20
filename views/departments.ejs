@@ -1,0 +1,26 @@
+<%- include ("./partials/header") %>
+
+<form action="/subjects" method="POST"> 
+    
+        <h1><center>Departments</h1>
+          <%
+          var result = [];
+
+          departments.forEach(function (department) {
+              if (result.indexOf(department.deptname) === -1) {
+                  result.push(department.deptname); 
+              }
+          }); 
+         
+          %>
+          
+      <% 
+        result.forEach(function(department){
+         
+          %>
+              <p><center><button id="btn-login"  class="btn btn-success" name="dept" value="<%=department%>"><%=department%></button></center></p>
+              
+      <% }); %>
+    </center>
+  </form>
+  <%- include ("./partials/footer") %>

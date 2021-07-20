@@ -1,0 +1,195 @@
+
+<%- include ("./partials/header") %>
+
+
+<html>
+<head>
+ 
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+    <link rel='stylesheet' href='profile.css'>
+    
+    </head>
+
+    
+               <body>
+              
+
+                    <div class="ScriptTop">
+                        <div class="rt-container">
+                            <div class="col-rt-4" id="float-right">
+                     
+                                <!-- Ad Here -->
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    
+                    <header class="ScriptHeader">
+                      <div class="rt-container">
+                        <div class="col-rt-12">
+                            <div class="rt-heading">
+                                <center><h1 style="width: 1120px; height: 50px; font-size: xx-large; font-family: Arial, Helvetica, sans-serif;">Company Profile</h1></center>
+                                 
+                              </div>
+                          </div>
+                      </div>
+                  </header>                    
+                    <section>
+                        <div class="rt-container">
+                              <div class="col-rt-12">
+                                  <div class="Scriptcontent">
+                                  
+                    <!-- Student Profile -->
+                    <div class="student-profile py-4">
+                      <div class="container">
+                        <div class="row">
+                          <div class="col-lg-8">
+                            <div class="card shadow-sm" >
+                              <div class="card-header bg-transparent border-0">
+                                <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+                              </div>
+                             
+                             
+                              
+                              <div class="card-body pt-0">
+                                <table class="table table-hover ">
+                                 
+                                    <th width="30%">Company Name	</th>
+                                    <td width="2%">:</td>
+                                    <td><%=company.username%><br></td>
+                                  </tr>
+                                  <tr>
+                                    <th width="30%">Email </th>
+                                    <td width="2%">:</td>
+                                    <td><%=company.email%><br>
+</tr>
+                                  <tr>
+                                    <th width="30%">Contact No </th>
+                                    <td width="2%">:</td>
+                                    <td><%=company.mobile%><br></td>
+                                  </tr>
+                                  <tr>
+                                    <th width="30%">Type </th>
+                                    <td width="2%">:</td>
+                                    <td> <%=company.type%><br></td>
+                                  </tr>
+                                  <tr>
+                                    <th width="30%">Company Website </th>
+                                    <td width="2%">:</td>
+                                    <td><a href="<%=company.link%>"><%=company.link%></a><br></td>
+                                  </tr>
+                                  <tr>
+                                    <th width="30%">Headquater </th>
+                                    <td width="2%">:</td>
+                                    <td><%=company.headquaters%><br></td>
+                                  </tr>
+                                  <tr>
+                                    <th width="30%">Category </th>
+                                    <td width="2%">:</td>
+                                    <td> <%=company.category%><br></td></td>
+                                  </tr>
+                                
+                                </table>
+                              </div>
+                              <%
+                              if(currentUser.username==company.username)
+                              {
+                              %>
+                              <button  class="badge badge-danger" style="height: 35px;"> <a href="/update/<%=currentUser.username%>" style="color: aliceblue;">UPDATE PROFILE</a></button>
+                              <%}
+                           %>
+                             
+                            </div>
+                             
+                          
+                          </div>
+                          <div class="col-lg-4">
+                            
+<%
+if(currentUser.username==company.username)
+{
+%>
+                            <div class="card shadow-sm" >
+                              <div class="card-header bg-transparent text-center">
+                                <h1><%=company.name%></h1>
+                               
+                              </div>
+                              <div class="card-body">
+                               
+<form action="/changepass" method="POST">
+  
+  <b><pre style="font-family: 'Times New Roman', Times, serif;">Company Name:</b><input type="text" value="<%=company.username%>" name="username" readonly></pre><br>
+  <b><pre style="font-family: 'Times New Roman', Times, serif;">New Password:  </b><input type="password" name="newpassword"  ></pre><br>
+
+
+  <input type="submit" value="Change Password" style="background-color: rgb(202, 30, 30)"> 
+</form>
+</div>
+</div>
+<br>
+<br>
+<br>
+<%
+                                }
+                                %>
+
+                            <div class="card shadow-sm" >
+                            <div class="card-body">
+                              <div class="card-header bg-transparent text-center">
+                           
+                                <h1>Events</h1>
+                              </div>
+<Table class="table ">
+                              <% if(links.length !=0) { %>
+<% links.forEach(function(links1) { 
+ 
+  %>
+  <tr>
+    <th>
+<a href= "/eventdisplay/<%=links1._id%>/<%=company.username%>"><%=links1.type%> <%=links1.topic%></a><br>
+</th>
+  </tr>
+<%
+
+}); %>
+<% } else { %>
+  <tr><th>---- -------</th></tr>
+  <tr><th>---- -------</th></tr>
+  <% } %>
+</table><%
+if(currentUser.username==company.username)
+{
+%>
+<form action="/event/<%= company.username %>" >
+<center><button  class="btn btn-danger"> ADD EVENT</button>
+</center>
+
+</form>
+<%
+}
+%>
+
+ 
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- partial -->
+                               
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                         
+                    
+                    
+                        <!-- Analytics -->
+                    
+                        </body>
+                    </html>
+                    <%- include ("./partials/footer") %>

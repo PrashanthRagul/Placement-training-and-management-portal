@@ -1,0 +1,35 @@
+
+<%- include ("./partials/header") %>
+
+<form action="" method="POST"> 
+  
+    <center><h1>Questions</h1>
+        <%
+        var res = [];
+        var result = [];
+          
+        departments.forEach(function (department) {
+            if (res.indexOf(department.questions) === -1) {
+                result.push({"ques":department.questions,"ans":department.answer});
+                res.push(department.questions);
+               }
+        }); 
+       
+        %>
+        
+    <% 
+      result.forEach(function(department){
+        
+        %>
+            <p><b><%=department.ques%></b></p>
+           
+            <p><%=department.ans%></p>
+    <% }); %>
+  </center>
+           
+
+  <br>
+  <br>
+  <br>
+</form>
+<%- include ("./partials/footer") %>

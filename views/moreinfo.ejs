@@ -1,0 +1,73 @@
+<%- include ("./partials/header") %>
+
+<style>
+#textboxid
+{
+    height:50px;
+    font-size:14pt;
+}
+  </style>
+
+
+  <%var element;%>
+  
+    <table id="t01" style="width:100%">
+      
+        
+    <%
+    
+  
+for(var i=0;i<questions.length;i++)
+{
+  element=questions[i].question;
+  %>
+  <p><b><%=questions[i].question%>?</b></p> 
+  <div class="card-body pt-0">
+            	
+    <table >
+  <%
+ 
+  for(var j=0;j<questions[i].answer.length;j++)
+  {
+    %>
+    
+   <tr>
+   <td width="50%"> <p><%=questions[i].answer[j].ans%></p></td>
+  
+    <form action="/upvotes" method="POST"> 
+    <input type="hidden" name="qn" value="<%=questions[i].question %>;<%=username%>">
+   <td width="10%">   <button style="font-size:24px;color:brown" id="btn-login" name="upvotes" value="<%=questions[i].answer[j].ans%>;<%=username%>"><i class="fa fa-thumbs-up"></i></button>
+    </td>
+    </form>
+ 
+ <td width="10%">   <h4><%=questions[i].answer[j].upvote.length-questions[i].answer[j].downvote.length%></h4></td>
+    <form action="/downvotes" method="POST"> 
+          <input type="hidden" name="qn" value="<%=questions[i].question %>;<%=username%>">
+        <td width="10%">  <button  style="font-size:24px;color:brown" id="btn-login" name="downvotes" value="<%=questions[i].answer[j].ans%>;<%=username%>"><i class="fa fa-thumbs-down"></i></button>
+   </td>
+        </form>
+      </tr>
+    <%
+  } %>
+</table>
+</div>
+<%
+}   %>
+    </table>
+  
+<br>
+<br>
+<br>
+
+<form action="/add_answer" method="POST">
+  Add your answer below:<br>
+  <input type="text" name="user" value="<%=username%>">
+  <input type="text" name="answer" id="textboxid" required>
+
+  <br>
+  <br>
+
+  <center> <button id="btn-login" name="question" value="<%=element %>" >Add answer</button> </center>
+  
+    </form>
+    <%- include ("./partials/footer") %>

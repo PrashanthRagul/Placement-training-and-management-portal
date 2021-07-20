@@ -1,0 +1,125 @@
+
+<%- include ("./partials/header") %>
+<html>
+    <head>
+    <title>Signup</title>
+    <head>
+      
+ 
+ 
+<script>
+  
+  var check = function() {
+  if (document.getElementById('spass').value ==
+    document.getElementById('s1pass').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+
+</script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+</head><body>
+  <br>
+  <br>
+  <br>
+  <div class="container"> 
+    <div class="panel panel-info" >
+        <div class="panel-heading">
+     <CENTER>       <div class="panel-title"><H2>STUDENT REGISTRATION</H2></div></CENTER>
+            </div>
+            <div style="padding-top:30px" class="panel-body" >
+
+<form action="/registerstudent" name="register_com" method="POST"> 
+
+  <div class="row justify-content-md-center ">
+<div class ="col=10">
+  <h5>Personal Details :</h5>
+  </div>
+</div>
+  <div class="row justify-content-md-center ">
+    <div class="col-10 border border-danger"  style="padding: 50px; border-radius: 10%;">
+
+    <b>REGISTER NUMBER:</b><br><input type="text" name="username"  class="form-control"id="suser"   required><br>
+   <b> PASSWORD</b>:<br><input type="password" name="password" id="spass"  onkeyup='check()' class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+   <span id='message'></span><BR>
+    <b>CONFIRM PASSWORD:</b><br>  <input type="password" name="cpass" id="s1pass"  onkeyup='check()' class="form-control" required><br> 
+    
+    <br> 
+     <b> NAME</b><br><input type="text" name="name"class="form-control" id="name" required></br>
+     
+     <b> MOBILE NUMBER:</b><br>  <input type="tel" class="form-control"name="mobile" id="mob-num" pattern="\d{12}$" title="phone no contains 12 digits with country code 91" required></br>
+     <b> E-MAIL ID:</b><br>  <input type="email" class="form-control"name="email"id="email" required><br>
+     <b>GENDER:</b><br>
+    <input type="radio" id="male" name="gender" value="male" required>
+<label for="male">MALE</label><br>
+<input type="radio" id="female" name="gender" value="female" required>
+<label for="female">FEMALE</label></br>
+
+<b>ADDRESS:</b><br> <input type="text" name="address" class="form-control" required></br>
+   </div>
+   </div>
+   <br>
+   <br>
+   <div class="row justify-content-md-center ">
+    <div class ="col=10">
+      <h5>Educational Details :<h5>
+      </div>
+    </div>
+    <div class="row justify-content-md-center " >
+     <div class="col-10 border border-danger"  style="padding: 50px; border-radius: 10%;">
+<b>10th MARK(in percentage):</b><br> <input type="number" name="tenth"  class="form-control"required></br>
+<b>12th MARK(in percentage):</b><br> <input type="number" name="twelth"  class="form-control"required></br>
+<!--<b>:</b><br> <input type="text" name="department" class="form-control" required></br>-->
+<label for="course"><b>COURSE:</b></label>
+<select id="course" name="course">
+  <option value="UG" selected>UG</option>
+  <option value="PG">PG</option>
+ 
+</select>
+<br>
+<label for="department"><b>DEPARTMENT:</b></label>
+<select id="department" name="department">
+  <option value="aero" selected>Aeronautical engineering</option>
+  <option value="auto">Automobile engineering</option>
+  <option value="EI"> Electronics and Instrumentation engineering</option>
+  <option value="ECE">Electronics and communication engineering</option>
+  <option value="CT">Computer Technology</option>
+  <option value="IT">Information Technology</option>
+  <option value="PT">Production engineering</option>
+  <option value="RPT">Rubber and Plastics engineering</option>
+</select>
+<br>
+<b>CGPA:</b><br> <input type="number" name="cgpa" step="0.01" class="form-control"required></br>
+<b>YEAR OF PASS:</b><br><input type="number" name="yearofpass"class="form-control" required></br>  
+<b>CURRENT YEAR:</b><br> <input type="number" name="currentyear" class="form-control"required></br>
+
+
+<b>Number of backlogs:</b><br> <input type="number" name="backlog" class="form-control"required>
+<br>
+<input type="checkbox" id="history" name="history" >
+<label for="history"><b> Have history of arrears</b></label>
+<br>
+
+<b>SKILLS:</b><br> <input type="text" name="skills" class="form-control"required></br>
+<b>RESUMELINK:</b><br> <input type="link" name="resumelink" class="form-control"required></br>
+     </div>
+   </div>
+   <br>
+   <br>
+   <div class="col-sm-12 controls">
+    <center> <button id="btn-login"  class="btn btn-danger">REGISTER</button> </center>
+    <BR>
+     </div>
+    
+</form> 
+  
+</body>
+</html>
+<%- include ("./partials/footer") %>

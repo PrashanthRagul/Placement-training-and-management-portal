@@ -1,0 +1,18 @@
+<%- include ("./partials/header") %>
+
+<form action="/coding_questions" method="POST"> 
+  
+    <center><h1>Topics</h1></center>
+         
+            <% for(var i= 0 ; i < topics.length; i++) {%>
+                
+                    <p><button id="btn-login"  class="btn btn-success" name="topic" value="<%=topics[i].topic %>"><%=topics[i].topic%></button></p>
+          
+        
+                 <% } %>
+               
+              
+                 
+  <br>
+  <br>
+</form>

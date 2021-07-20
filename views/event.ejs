@@ -1,0 +1,199 @@
+
+<%- include ("./partials/header") %>
+<html>
+<head>
+<!--<link href="event.css" rel="stylesheet">
+-->
+</head>
+<body>
+ company name:
+  <input type="text" name="username" value="<%=name%>" readonly>
+<div class="content">
+    <!-- Nav pills -->
+    <ul class="nav nav-pills" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link <%=head1%>" data-toggle="pill" href="/hiringplacement/<%=name%>">hiringplacement</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%=head2%>" data-toggle="pill" href="/hiringintern/<%=name%>">hiringintern</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%=head3%>" data-toggle="pill" href="/webinar/<%=name%>">webinar</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link <%=head4%>" data-toggle="pill" href="/other/<%=name%>">other</a>
+      </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div id="hiringplacement" class="container tab-pane <%=tab1%>">
+        <form action="/placement/<%=name%>" method="POST">
+         last date of registration:
+      
+          <input type="date" name="regdate" id="regdate" >
+          <br>
+          
+          Eligible branch:
+          <br>
+          <br>UG:<br>
+          <input type="checkbox" id="dept1" name="dept" value="CT">Computer Technology<br>
+          <input type="checkbox" id="dept2" name="dept" value="ECE">Electronics and Communication engineering<br>
+          <input type="checkbox" id="dept3" name="dept" value="EI">Electronics and Instrumentation technology<br>
+          <input type="checkbox" id="dept4" name="dept" value="IT">InformationTechnology<br>
+          <input type="checkbox" id="dept5" name="dept" value="auto">Automobile<br>
+          <input type="checkbox" id="dept6" name="dept" value="aero">Aeronautical<br>
+          <input type="checkbox" id="dept7" name="dept" value="PT">production engineering<br>
+          <input type="checkbox" id="dept8" name="dept" value="RPT">Rubber and plastics engineering<br>
+          <br>
+          PG:<br>
+          <br>
+          <input type="checkbox" id="dept1" name="dept1" value="CT">Computer Technology<br>
+          <input type="checkbox" id="dept2" name="dept1" value="ECE">Electronics and Communication engineering<br>
+          <input type="checkbox" id="dept3" name="dept1" value="EI">Electronics and Instrumentation technology<br>
+          <input type="checkbox" id="dept4" name="dept1" value="IT">InformationTechnology<br>
+          <input type="checkbox" id="dept5" name="dept1" value="auto">Automobile<br>
+          <input type="checkbox" id="dept6" name="dept1" value="aero">Aeronautical<br>
+          <input type="checkbox" id="dept7" name="dept1" value="PT">production engineering<br>
+          <input type="checkbox" id="dept8" name="dept1" value="RPT">Rubber and plastics engineering<br>
+          <br>
+          eligibilty criteria(cgpa):<br>
+          <input type="number" id="cgpa"class="form-control" name="cgpa" min="7" max="10" step="any"><br>
+
+          <input type="checkbox" id="history" name="history" >
+<label for="history"> There should be no history of arrears</label>
+<br>
+<input type="checkbox" id="arrear" name="arrear" >
+<label for="arrear"> There should be no current arrear</label>
+<br>
+          
+          CTC:(in LPA)<br>
+          <input type="number" id="CTC"class="form-control" name="CTC"><br>
+          
+          
+          JOB role:<br>
+          <input type="text" class="form-control"name="role"><br>
+          
+          online test Date:
+          <input type="date" id="testdate" name="testdate"><br>
+          
+          
+        
+          description:
+          <br>
+          
+          <textarea id="w3review" class="form-control"name="desc" rows="4" cols="50">
+          
+          
+          </textarea>
+          <center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+        </form>
+      </div>
+
+
+      <div id="hiringintern" class="container tab-pane <%=tab2%>">
+        <form action="/intern/<%=name%>" method="POST">
+          last date of registration:
+         
+          <input type="date" name="regdate" id="regdate" >
+          <br>
+          
+         Eligible Branch:<br>
+          <br>UG:<br>
+          <input type="checkbox" id="dept1" name="dept" value="CT">Computer Technology<br>
+          <input type="checkbox" id="dept2" name="dept" value="ECE">Electronics and Communication engineering<br>
+          <input type="checkbox" id="dept3" name="dept" value="EI">Electronics and Instrumentation technology<br>
+          <input type="checkbox" id="dept4" name="dept" value="IT">InformationTechnology<br>
+          <input type="checkbox" id="dept5" name="dept" value="auto">Automobile<br>
+          <input type="checkbox" id="dept6" name="dept" value="aero">Aeronautical<br>
+          <input type="checkbox" id="dept7" name="dept" value="PT">production engineering<br>
+          <input type="checkbox" id="dept8" name="dept" value="RPT">Rubber and plastics engineering<br>
+       <br>   
+          PG:<br>
+          <input type="checkbox" id="dept1" name="dept1" value="CT">Computer Technology<br>
+          <input type="checkbox" id="dept2" name="dept1" value="ECE">Electronics and Communication engineering<br>
+          <input type="checkbox" id="dept3" name="dept1" value="EI">Electronics and Instrumentation technology<br>
+          <input type="checkbox" id="dept4" name="dept1" value="IT">InformationTechnology<br>
+          <input type="checkbox" id="dept5" name="dept1" value="auto">Automobile<br>
+          <input type="checkbox" id="dept6" name="dept1" value="aero">Aeronautical<br>
+          <input type="checkbox" id="dept7" name="dept1" value="PT">production engineering<br>
+          <input type="checkbox" id="dept8" name="dept1" value="RPT">Rubber and plastics engineering<br>
+          <br>
+          eligibilty criteria(cgpa):<br>
+          <input type="number" id="cgpa"class="form-control" name="cgpa" min="7" max="10" step="any"><br>
+
+          <input type="checkbox" id="history" name="history" >
+<label for="history"> There should be no history of arrears</label>
+<br>
+<input type="checkbox" id="arrear" name="arrear" >
+<label for="arrear"> There should be no current arrear</label>
+<br>
+          
+          
+         
+          
+          stipend:
+          <input type="number" id="stipend"class="form-control" name="stipend"><br>
+          JOB role:<br>
+          <input type="text" class="form-control"name="role"><br>
+          
+         
+          online test Date:
+          <input type="date" id="testdateintern" name="testdate"><br>
+          
+         
+          
+          intern period(months):<br>
+          <input type="number" id="months" class="form-control"name="months"><br>
+          intern start date:
+          <input type="date" id="startdate"name="startdate"><br>
+          intern last date
+          <input type="date" id="lastdate" name="lastdate">
+          <br>
+          
+          
+          <input type="checkbox"  name="internppo" >PPO <br>
+          description:
+          <br>
+          
+          <textarea id="w3review" class="form-control"name="desc" rows="4" cols="50">
+          
+          
+          </textarea>
+          <center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+        </form>
+      </div>
+      <div id="webinar" class="container tab-pane <%=tab3%>">
+        <form action="/webinar/<%=name%>" method="POST">
+            webinartopic:<br>
+            <input type="text" name="topic" class="form-control"><br>
+            Date:
+            <input type="date"  name="date"><br>
+            time:<br>
+            <input type="text" name="time" class="form-control"><br>
+            
+            description:<br>
+
+            
+            <textarea id="w3review" class="form-control"name="desc" rows="4" cols="50">
+
+
+            </textarea>
+            <center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+        </form>
+
+      </div>
+      <div id="other" class="container tab-pane <%=tab4%>">
+        <form action="/other/<%=name%>" method="POST">
+          DESCRIPTION:<br>
+        <textarea id="w3review" class="form-control"name="desc" rows="4" cols="50">
+         </textarea>
+         <center> <button id="btn-login"  class="btn btn-success">Submit</button> </center>
+        </form>
+        
+      </div>
+    </div>
+  </div>
+  </body>
+  </html>
+  <%- include ("./partials/footer") %>

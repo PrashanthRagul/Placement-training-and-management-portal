@@ -1,0 +1,226 @@
+
+<%- include ("./partials/header") %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+   
+    <meta name="author" content="Codeconvey" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css'>
+
+    <!--Only for demo purpose - no need to add.-->
+    <link rel="stylesheet" href="css/demo.css" />
+    
+	    <link rel="stylesheet" href="css/style.css">
+
+        <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <style>
+        table {
+          width:100%;
+        }
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 15px;
+          text-align: left;
+        }
+        #t01 tr:nth-child(even) {
+          background-color: #eee;
+        }
+        #t01 tr:nth-child(odd) {
+         background-color: #fff;
+        }
+        #t01 th {
+          background-color: black;
+          color: white;
+        }
+        body{
+          padding:10px;
+        }
+  
+        </style>
+        
+  
+</head>
+<body>
+
+<div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right">
+ 
+            
+            
+        </div>
+        <div class="col-rt-2">
+            <ul>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	
+        </div>
+    </div>
+</header>
+	
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+              
+<!-- Student Profile -->
+<center><h2 style="border:2px solid DodgerBlue;;"><%=event.type %></h2></center>
+<br>
+
+<center>
+<table border=1>
+    
+    
+<% if (event.type != null && event.type != '') {%>
+    <tr><th>TYPE:</th>
+  <td> <%=event.type %></td></tr>
+    <%}%>
+    
+    <% if (event.username != null && event.username != '') {%>
+        <tr> <th>COMPANY NAME:</th>
+        <td><input type="text" value="<%=event.username %>"name="username"  readonly></td></tr>
+        <%}%>
+
+        <% if (event.regdate != null && event.regdate != '') {%>
+            <tr><th>REGISTRATION DATE:</th>
+            <td><%=event.regdate %></td></tr>
+            <%}%>
+
+            <% if (event.dept != null && event.dept != '') {%>
+                <tr><th>  ELIGIBLE UG DEPARTMENTS:</th>
+                <td><%=event.dept %></td></tr>
+                <%}%>
+
+                <% if (event.dept1 != null && event.dept1!= '') {%>
+                    <tr><th> ELIGIBLE PG DEPARTMENTS:</th>
+                    <td><%=event.dept1 %></td></tr>
+                    <%}%>
+
+                    <% if (event.cgpa != null && event.cgpa!= '') {%>
+                    <tr><th>    ELIGIBLE CGPA:</th>
+                       <td> <%=event.cgpa %></td></tr>
+                        <%}%>
+
+                        <% if (event.ctc != null && event.ctc != '') {%>
+                            <tr><th> CTC:</th>
+                            <td><%=event.ctc %></td></tr>
+                            <%}%>
+
+                            <% if (event.role != null && event.role != '') {%>
+                                <tr><th>ROLES:</th>
+                                <td><%=event.role %></td></tr>
+                                <%}%>
+                                
+                                <% if (event.testdate != null && event.testdate != '') {%>
+                                    <tr><th> TEST DATE:</th>
+                                    <td><%=event.testdate %></td></tr>
+                                    <%}%>
+
+                                   
+                                        
+                                        <% if (
+                                          event.desc !='          \r\n          \r\n          ' && event.desc !='         ' && event.desc!='') {%>
+                                            <tr><th> DESCRIPTION:</th>
+                                           <td> <%=event.desc %> </td></tr>
+                                            <%}%>
+                                            
+
+                                            <% if (event.stipend != null && event.stipend != '') {%>
+                                               <tr><th> STIPENED:</th>
+                                               <td> <%=event.stipend %></td></tr>
+                                                <%}%>
+
+                                                <% if (event.months != null && event.months != '') {%>
+                                                   <tr><th> MONTHS:</th>
+                                                    <td><%=event.months %></td></tr>
+                                                    <%}%>
+
+                                                    <% if (event.startdate != null && event.startdate != '') {%>
+                                                    <tr><th>    STARTING DATE:</th>
+                                                       <td> <%=event.startdate %></td></tr>
+                                                        <%}%>
+
+                                                        <% if (event.lastdate != null && event.lastdate != '') {%>
+                                                        <tr><th>    LAST DATE:</th>
+                                                          <td> <%=event.lastdate %></td>
+                                                            <%}%>
+
+                                                            <% if (event.ppooffer != null && event.ppooffer != '') {%>
+                                                                <tr><th>PPO:</th>
+                                                                <td><%=event.ppooffer %></td></tr>
+                                                                <%}%>
+
+                                                                <% if (event.topic != null && event.topic != '') {%>
+                                                                <tr><th>    TOPIC:</th>
+                                                                   <td><%=event.topic %></td>
+                                                                    <%}%>
+                                                                    <% if (event.date != null && event.date != '') {%>
+                                                                        <tr><th>DATE:</th>
+                                                                       <td><%=event.date %></td></tr>
+                                                                        <%}%>
+
+                                                                        <% if (event.time != null && event.time != '') {%>
+                                                                        <tr><th>    TIME:</th>
+                                                                            <td><%=event.time %></td></tr>
+                                                                            <%}%>
+
+                                            
+                                                                        </table></center>
+    
+
+<br>
+          </div>
+        </form>
+
+     
+          <%  if(event.type!="other"){ if (currentUser.username==event.username) { %>
+           <center>  <a href="/main/appliedstudents/<%= event._id %>/<%= event.type %>/<%= event.username %>" class="btn btn-secondary btn-sm">applied students</a></center> 
+              <% } else{ %>
+                <center>      <a href="/main/apply/<%= event._id %>/<%= event.type %>/<%= event.username %>/<%= currentUser.username %>" class="btn btn-secondary btn-sm">apply</a></center> 
+      <% }} %>
+<br><br>
+      <%   if (currentUser.username==event.username) { %>
+        <center>  <a href="/main/eventdelete/<%= event._id %>/<%= event.type %>/<%= event.username %>" class="btn btn-secondary btn-sm">deleteevent</a></center> 
+           <% }
+           else{ %>
+           <!-- <center><button disabled>  <a href="/main/student/eventdelete/<%= event._id %>/<%= event.type %>/<%= currentUser.username %>" class="btn btn-secondary btn-sm">deleteevent</a></button></center> 
+            -->
+            <% } %>
+          </div>
+          <div style="height: 26px"></div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+           
+    		</div>
+		</div>
+    </div>
+</section>
+
+
+
+
+
+    <!-- Analytics -->
+
+	</body>
+</html>
+<%- include ("./partials/footer") %>

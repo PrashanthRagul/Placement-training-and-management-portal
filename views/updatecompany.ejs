@@ -1,0 +1,99 @@
+
+<%- include ("./partials/header") %>
+<html>
+    <head>
+    <title>Signup</title>
+    <head>
+      
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+<script>
+  /*function validation()
+  { 
+  var pass= document.forms["register_com"]["password"].value;
+  var cpass= document.forms["register_com"]["cpass"].value;
+
+ 
+if(pass!=cpass)
+  {
+    alert("password and confirm password must be equal");
+   
+    return false;
+  }
+  return true;}*/
+  var check = function() {
+  if (document.getElementById('spass').value ==
+    document.getElementById('s1pass').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+
+</script></head><body>
+  <br>
+  <br>
+  <br>
+  <div class="container"> 
+    <div class="panel panel-info" >
+        <div class="panel-heading">
+          <CENTER>       <div class="panel-title"><H2>COMPANY UPDATION</H2></div></CENTER>
+            </div>
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div> 
+ 
+<form action="/update" name="register_com" method="POST"> 
+  
+  <div class="row justify-content-md-center ">
+    <div class ="col=10">
+      <h5 style="text-align: left;">Details :</h5>
+      </div>
+    </div>
+      <div class="row justify-content-md-center ">
+        <div class="col-10 border border-danger"  style="padding: 50px; border-radius: 10%;">
+   
+    <b>COMPANYNAME:</b><br><input type="text" name="username" value="<%=company.username%>" class="form-control"id="suser" size=10 title="username contains atleast 10 characters"  readonly><br>
+  
+     
+     
+     <b> MOBILE NUMBER:</b><br>  <input type="tel" class="form-control"name="mobile"value="<%=company.mobile%>" id="mob-num" pattern="\d{12}$" title="phone no conatins 12 digits with country code 91" required></br>
+     <b> E-MAIL ID:</b><br>  <input type="email" class="form-control"name="email"id="email"value="<%=company.email%>" required><br>
+     <b> TYPE:</b><br>
+      <input type="radio" id="service" name="type" value="service" <%=service%>>
+<label for="service">service</label><br>
+<input type="radio" id="product" name="type" value="product" <%=product%>>
+<label for="product">product</label><br>
+    <b> WEBSITE LINK:</b><BR> <input type="url" value="<%=company.link%>" name="link"class="form-control" required><br>
+    
+     
+     <label for="category"><b>CHOOSE CATEGORY:</b></label><br>
+  <select id="category" name="category" required>
+    <br>
+    <option value="software"<% if(company.category== "software"){%>selected<%}%>>software</option>
+    <option value="Banking"<% if(company.category== "Banking"){%>selected<%}%>>Banking/Financial</option>
+    <option value="Marketing"<% if(company.category== "Marketing"){%>selected<%}%>>Marketing</option>
+    
+    
+  </select>
+  <br>
+  <BR>
+  <b>HEADQUATERS</b> <input type="text" name="head"class="form-control" value="<%=company.headquaters%>" required>
+</div>
+</div>
+
+<br>
+<br>
+  <div class="col-sm-12 controls">
+   <center> <button id="btn-login"  class="btn btn-danger">UPDATE</button> </center><BR>
+    </div>
+   
+</form> 
+  
+</body>
+</html>
+
+<%- include ("./partials/footer") %>

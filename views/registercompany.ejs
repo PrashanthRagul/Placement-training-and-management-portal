@@ -1,0 +1,91 @@
+
+<%- include ("./partials/header") %>
+<html>
+    <head>
+    <title>Signup</title>
+    <head>
+      
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+<script>
+
+  var check = function() {
+  if (document.getElementById('spass').value ==
+    document.getElementById('s1pass').value) {
+    document.getElementById('message').style.color = 'green';
+    document.getElementById('message').innerHTML = 'matching';
+  } else {
+    document.getElementById('message').style.color = 'red';
+    document.getElementById('message').innerHTML = 'not matching';
+  }
+}
+
+</script></head><body>
+  <br>
+  <br>
+  <br>
+  <div class="container"> 
+    <div class="panel panel-info" >
+        <div class="panel-heading">
+          <CENTER>       <div class="panel-title"><H2>COMPANY REGISTRATION</H2></div></CENTER>
+            </div>
+            <div style="padding-top:30px" class="panel-body" >
+
+                <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div> 
+ 
+<form action="/registercompany" name="register_com" method="POST"> 
+ 
+  <div class="row justify-content-md-center ">
+    <div class ="col=10">
+      <h5 style="text-align: left;">Details :</h5>
+      </div>
+    </div>
+      <div class="row justify-content-md-center ">
+        <div class="col-10 border border-danger"  style="padding: 50px; border-radius: 10%;">
+    
+    <b>COMPANYNAME:</b><br><input type="text" name="username"  class="form-control"id="suser" size=10 title="username contains atleast 10 characters"  required><br>
+   <b> PASSWORD</b>:<br><input type="password" name="password" id="spass" class="form-control" onkeyup='check()' pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required><br>
+   <span id='message'></span><BR>
+   
+    <b>CONFIRM PASSWORD:</b><br>  <input type="password"class="form-control" name="cpass" id="s1pass"  onkeyup='check()'  required><br> 
+    
+    <br> 
+     
+     
+     <b> MOBILE NUMBER:</b><br>  <input type="tel" class="form-control"name="mobile" id="mob-num" pattern="\d{12}$" title="phone no contains 12 digits with country code 91" required></br>
+     <b> E-MAIL ID:</b><br>  <input type="email" class="form-control"name="email"id="email" required><br>
+     <b> TYPE:</b><br>
+      <input type="radio" id="service" name="type" value="service" required>
+<label for="service">service</label><br>
+<input type="radio" id="product" name="type" value="product" required>
+<label for="product">product</label><br>
+    <b> WEBSITE LINK:</b><BR> <input type="url"  name="link"class="form-control" required><br>
+    
+     
+     <label for="category"><b>CHOOSE CATEGORY:</b></label><br>
+  <select id="category" name="category" required>
+    <br>
+    <option value="software">software</option>
+    <option value="Banking">Banking/Financial</option>
+    <option value="Marketing">Marketing</option>
+    
+    
+  </select>
+  <br>
+  <BR>
+  <b>HEADQUATERS</b> <input type="text" name="head"class="form-control" required>
+        </div>
+      </div>
+<br>
+<br>
+  <div class="col-sm-12 controls">
+   <center> <button id="btn-login"  class="btn btn-danger">REGISTER</button> </center><BR>
+    </div>
+   
+</form> 
+  
+</body>
+</html>
+
+<%- include ("./partials/footer") %>
